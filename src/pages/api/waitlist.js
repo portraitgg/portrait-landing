@@ -9,31 +9,28 @@ Airtable.configure({
 })
 
 const base = Airtable.base(process.env.AIRTABLE_BASE)
+const table = base('Waitlist')
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(400).send({ message: 'Only POST requests allowed' })
     return
   }
 
-  base('Waitlist').create(
-    {
-      Name: req.body.name,
-      Email: req.body.email,
-      Reason: req.body.reason,
+  try {
+    const { name, email, reason } = req.body
+
+    const createdRecord = await table.create({
+      Name: name,
+      Email: email,
+      Reason: reason,
       Status: 'Requested'
-    },
-    (err, record) => {
-      if (err) {
-        console.error(err)
-        return
-      }
+    })
 
-      // eslint-disable-next-line no-unused-vars
-      const recordId = record.getId()
-    }
-  )
-
-  console.log('ok')
-  res.status(200).json(req.body)
+    console.log(createdRecord.getId())
+    res.status(200).json(createdRecord.fields)
+  } catch (error) {
+    console.error(error)
+    res.status(500).send({ message: 'Something went wrong' })
+  }
 }
