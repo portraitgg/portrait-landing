@@ -1,0 +1,20 @@
+@define-mixin fluid-type $min-font-size, $max-font-size, $min-vw, $max-vw {
+  & {
+    font-size: $(min-font-size)px;
+  }
+
+  @media screen and (min-width: $(min-vw)px) {
+    & {
+      font-size: calc(
+        $(min-font-size)px + ($max-font-size - $min-font-size) *
+        ((100vw - $(min-vw)px) / ($max-vw - $min-vw))
+      );
+    }
+  }
+
+  @media screen and (min-width: $(max-vw)px) {
+    & {
+      font-size: $(max-font-size)px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.marquee {
+  position: relative;
+  height: 5rem;
+}
+
+.marquee-wrap {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.marquee-scroll-left {
+  animation: marquee-scroll-left 120s linear infinite;
+  height: 100%;
+}
+
+.marquee-scroll-right {
+  animation: marquee-scroll-right 120s linear infinite;
+  height: 100%;
+}
+
+.marquee-item {
+  height: 100%;
+}
+
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
