@@ -1,0 +1,23 @@
+
+
+.header {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1000px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 68.12%, #000000 100%), radial-gradient(41.91% 36.87% at 21.11% 106.88%, #000000 53.28%, rgba(0, 0, 0, 0) 100%), radial-gradient(28.89% 58.63% at 107.71% 71.13%, #000000 53.28%, rgba(0, 0, 0, 0) 100%), radial-gradient(24.4% 79.5% at 35.83% -6.5%, #000000 13.08%, rgba(0, 0, 0, 0) 99.93%), radial-gradient(22.65% 54.95% at 65.56% 100%, #BE59BA 0%, rgba(74, 93, 197, 0) 100%), radial-gradient(40.69% 83.33% at 95.35% 7.28%, #FFD464 0%, #FF8D74 15.63%, rgba(255, 255, 255, 0) 100%), radial-gradient(45.21% 88.12% at -0.49% 72.5%, #B9C2F5 0%, #4A5DC5 37.51%, rgba(255, 141, 116, 0) 100%), #1B2340;
+    filter: blur(40px);
+    z-index: -1;
+  }
+}
+
+.title {
+  @mixin fluid-type 38, 90, 320, 1600;
+  color: #dfdfdf;
+  mix-blend-mode: color-dodge;
+}
