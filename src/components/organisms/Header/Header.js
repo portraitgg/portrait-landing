@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { Circle } from '@/components/atoms/Circle'
 import { Input, Textarea } from '@/components/atoms/Form'
 import { Logo } from '@/components/atoms/Logo'
+import { LoadingSpinner } from '@/components/atoms/LoadingSpinner'
 
 import styles from './Header.module.css'
 
@@ -19,7 +20,7 @@ const validationSchema = yup.object().shape({
   reason: yup.string().required('Please provide a reason for joining the waitlist')
 })
 
-function Modal({ data, isOpen, isSuccess, onClose, onSubmit }) {
+function Modal({ data, isOpen, isSuccess, isLoading, onClose, onSubmit }) {
   const {
     handleSubmit,
     control,
@@ -124,9 +125,19 @@ function Modal({ data, isOpen, isSuccess, onClose, onSubmit }) {
                     />
                     <button
                       type="submit"
-                      className="inline-flex items-center justify-center px-8 py-4 bg-yellow-200 hover:bg-yellow-300 rounded-lg"
+                      className={`relative inline-flex items-center justify-center px-8 py-4 bg-yellow-200 hover:bg-yellow-300 rounded-lg ${
+                        isLoading ? 'cursor-not-allowed' : ''
+                      }`}
+                      disabled={isLoading}
                     >
-                      <p className="text-lg font-medium">Join closed beta waitlist</p>
+                      {isLoading ? (
+                        <span className="inline-flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-10">
+                          <LoadingSpinner size="20" />
+                        </span>
+                      ) : null}
+                      <p className={`text-lg font-medium ${isLoading ? 'invisible' : ''}`}>
+                        Join closed beta waitlist
+                      </p>
                     </button>
                   </form>
                 </>
@@ -143,6 +154,7 @@ Modal.propTypes = {
   data: PropTypes.shape({}),
   isOpen: PropTypes.bool,
   isSuccess: PropTypes.bool,
+  isLoading: PropTypes.bool,
   onClose: PropTypes.func,
   onSubmit: PropTypes.func
 }
@@ -151,6 +163,7 @@ Modal.defaultProps = {
   data: {},
   isOpen: false,
   isSuccess: false,
+  isLoading: false,
   onClose: () => {},
   onSubmit: () => {}
 }
@@ -159,6 +172,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   async function handleLandingSubmit(e) {
     e.preventDefault()
@@ -167,6 +181,8 @@ function Header() {
   }
 
   async function handleWaitlistSubmit(data) {
+    setIsLoading(true)
+
     const response = await fetch('/api/waitlist', {
       method: 'POST',
       headers: {
@@ -174,6 +190,8 @@ function Header() {
       },
       body: JSON.stringify(data)
     })
+
+    setIsLoading(false)
 
     if (response.ok) {
       setIsSuccess(true)
@@ -240,6 +258,7 @@ function Header() {
       <Modal
         isOpen={isOpen}
         isSuccess={isSuccess}
+        isLoading={isLoading}
         data={{ email }}
         onClose={() => setIsOpen(false)}
         onSubmit={(data) => handleWaitlistSubmit(data)}
