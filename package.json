@@ -1,5 +1,5 @@
 {
-  "name": "next-boilerplate",
+  "name": "portrait-landing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,9 @@
     "new:component": "hygen new component",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
+  },
+  "engines": {
+    "node": ">=14.17.0"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.2",
@@ -59,5 +62,6 @@
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0",
     "tailwindcss": "^2.2.19"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
