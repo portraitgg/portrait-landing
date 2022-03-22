@@ -183,7 +183,9 @@ function Header() {
   async function handleWaitlistSubmit(data) {
     setIsLoading(true)
 
-    const response = await fetch('/api/waitlist', {
+    const apiUrl = 'https://api.portrait.gg/api/v1/waitlist'
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
