@@ -11184,57 +11184,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-boilerplate@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "next-boilerplate@workspace:."
-  dependencies:
-    "@babel/core": ^7.15.5
-    "@babel/eslint-parser": ^7.15.7
-    "@headlessui/react": ^1.4.2
-    "@hookform/resolvers": ^2.8.4
-    "@storybook/addon-actions": ^6.3.8
-    "@storybook/addon-essentials": ^6.3.8
-    "@storybook/addon-links": ^6.3.8
-    "@storybook/addon-postcss": ^2.0.0
-    "@storybook/preset-scss": ^1.0.3
-    "@storybook/react": ^6.3.8
-    airtable: ^0.11.1
-    autoprefixer: ^10.4.0
-    babel-loader: ^8.2.2
-    babel-plugin-lodash: ^3.3.4
-    classnames: ^2.3.1
-    css-loader: 5.2.6
-    dotenv: ^10.0.0
-    eslint: 7.32.0
-    eslint-config-airbnb: ^18.2.1
-    eslint-config-next: 11.1.2
-    eslint-config-prettier: ^8.3.0
-    eslint-import-resolver-alias: ^1.1.2
-    eslint-plugin-import: ^2.24.2
-    eslint-plugin-prettier: ^4.0.0
-    eslint-plugin-react: ^7.26.0
-    eslint-plugin-react-hooks: ^4.2.0
-    hygen: ^6.1.0
-    lodash: ^4.17.21
-    next: 11.1.2
-    postcss: ^8.4.4
-    postcss-import: 12.0.1
-    postcss-mixins: ^9.0.1
-    postcss-nested: ^5.0.6
-    prettier: ^2.4.1
-    prop-types: ^15.7.2
-    react: 17.0.2
-    react-dom: 17.0.2
-    react-hook-form: ^7.21.0
-    react-icons: ^4.2.0
-    style-loader: 2.0.0
-    stylelint: ^14.1.0
-    stylelint-config-recommended: ^6.0.0
-    tailwindcss: ^2.2.19
-    yup: ^0.32.11
-  languageName: unknown
-  linkType: soft
-
 "next@npm:11.1.2":
   version: 11.1.2
   resolution: "next@npm:11.1.2"
@@ -12317,6 +12266,57 @@ __metadata:
   checksum: 3865f569f1ee0beb2959eb4ab8e2baa58c5c662fe9a333de71811e52a2f187ade769d1a87d275370721be64907f9e6bfd8a6158380dd87cd34d0dbf498f302e0
   languageName: node
   linkType: hard
+
+"portrait-landing@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "portrait-landing@workspace:."
+  dependencies:
+    "@babel/core": ^7.15.5
+    "@babel/eslint-parser": ^7.15.7
+    "@headlessui/react": ^1.4.2
+    "@hookform/resolvers": ^2.8.4
+    "@storybook/addon-actions": ^6.3.8
+    "@storybook/addon-essentials": ^6.3.8
+    "@storybook/addon-links": ^6.3.8
+    "@storybook/addon-postcss": ^2.0.0
+    "@storybook/preset-scss": ^1.0.3
+    "@storybook/react": ^6.3.8
+    airtable: ^0.11.1
+    autoprefixer: ^10.4.0
+    babel-loader: ^8.2.2
+    babel-plugin-lodash: ^3.3.4
+    classnames: ^2.3.1
+    css-loader: 5.2.6
+    dotenv: ^10.0.0
+    eslint: 7.32.0
+    eslint-config-airbnb: ^18.2.1
+    eslint-config-next: 11.1.2
+    eslint-config-prettier: ^8.3.0
+    eslint-import-resolver-alias: ^1.1.2
+    eslint-plugin-import: ^2.24.2
+    eslint-plugin-prettier: ^4.0.0
+    eslint-plugin-react: ^7.26.0
+    eslint-plugin-react-hooks: ^4.2.0
+    hygen: ^6.1.0
+    lodash: ^4.17.21
+    next: 11.1.2
+    postcss: ^8.4.4
+    postcss-import: 12.0.1
+    postcss-mixins: ^9.0.1
+    postcss-nested: ^5.0.6
+    prettier: ^2.4.1
+    prop-types: ^15.7.2
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-hook-form: ^7.21.0
+    react-icons: ^4.2.0
+    style-loader: 2.0.0
+    stylelint: ^14.1.0
+    stylelint-config-recommended: ^6.0.0
+    tailwindcss: ^2.2.19
+    yup: ^0.32.11
+  languageName: unknown
+  linkType: soft
 
 "posix-character-classes@npm:^0.1.0":
   version: 0.1.1
