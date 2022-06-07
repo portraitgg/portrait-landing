@@ -179,8 +179,6 @@ function Header() {
   const [isSuccess, setIsSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  console.log(email)
-
   async function handleLandingSubmit(e) {
     e.preventDefault()
 
