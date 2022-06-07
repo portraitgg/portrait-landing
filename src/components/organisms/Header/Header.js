@@ -215,7 +215,7 @@ function Header() {
               <Logo />
             </a>
           </Link>
-          <div className="flex mt-3">
+          <div className="flex">
             <a
               className="flex items-center text-white font-medium gap-2"
               href="https://twitter.com/portrait_gg"
@@ -223,7 +223,9 @@ function Header() {
               rel="noreferrer"
             >
               <BsTwitter fill="#ffffff" size={20} />
-              <span>Follow us on Twitter</span>
+              <span>
+                Follow us <span className="hidden sm:inline">on Twitter</span>
+              </span>
             </a>
           </div>
         </div>
