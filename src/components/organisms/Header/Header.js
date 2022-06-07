@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { MdCheck } from 'react-icons/md'
 import { useForm, Controller } from 'react-hook-form'
@@ -24,11 +24,16 @@ function Modal({ data, isOpen, isSuccess, isLoading, onClose, onSubmit }) {
   const {
     handleSubmit,
     control,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm({
     defaultValues: data,
     resolver: yupResolver(validationSchema)
   })
+
+  useEffect(() => {
+    reset(data)
+  }, [reset, data])
 
   function handleFormSubmit(_data, e) {
     e.preventDefault()
@@ -173,6 +178,8 @@ function Header() {
   const [email, setEmail] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
+  console.log(email)
 
   async function handleLandingSubmit(e) {
     e.preventDefault()
