@@ -6,6 +6,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import Link from 'next/link'
+import { BsTwitter } from 'react-icons/bs'
 
 import { Circle } from '@/components/atoms/Circle'
 import { Input, Textarea } from '@/components/atoms/Form'
@@ -179,8 +180,6 @@ function Header() {
   const [isSuccess, setIsSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  console.log(email)
-
   async function handleLandingSubmit(e) {
     e.preventDefault()
 
@@ -216,6 +215,17 @@ function Header() {
               <Logo />
             </a>
           </Link>
+          <div className="flex mt-3">
+            <a
+              className="flex items-center text-white font-medium gap-2"
+              href="https://twitter.com/portrait_gg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsTwitter fill="#ffffff" size={20} />
+              <span>Follow us on Twitter</span>
+            </a>
+          </div>
         </div>
         <div className="container mx-auto px-6 pt-20 sm:pt-24 md:pt-32 lg:pt-40 pb-32 sm:pb-40 md:pb-48 lg:pb-60 text-center">
           <h1 className={`text-7xl font-extrabold leading-tighter tracking-tight ${styles.title}`}>

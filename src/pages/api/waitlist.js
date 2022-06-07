@@ -27,7 +27,6 @@ export default async function handler(req, res) {
       Status: 'Requested'
     })
 
-    console.log(createdRecord.getId())
     res.status(200).json(createdRecord.fields)
   } catch (error) {
     console.error(error)
