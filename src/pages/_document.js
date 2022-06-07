@@ -21,6 +21,7 @@ class MyDocument extends Document {
           <meta name="application-name" content="Portrait" />
           <meta name="msapplication-TileColor" content="#8e8e8e" />
           <meta name="theme-color" content="#000000" />
+          <script defer data-domain="portrait.gg" src="https://plausible.io/js/plausible.js" />
         </Head>
         <body className="bg-gray-1000 antialiased">
           <Main />
