@@ -42,6 +42,9 @@ module.exports = {
       }
     },
     extend: {
+      zIndex: {
+        10000: 10000
+      },
       scale: {
         '-100': '-1'
       },
