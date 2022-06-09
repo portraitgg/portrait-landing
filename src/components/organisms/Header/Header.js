@@ -43,7 +43,7 @@ function Modal({ data, isOpen, isSuccess, isLoading, onClose, onSubmit }) {
 
   return (
     <Transition show={isOpen} as={Fragment}>
-      <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={onClose}>
+      <Dialog as="div" className="fixed inset-0 z-10000 overflow-y-auto" onClose={onClose}>
         <div className="min-h-screen px-4 text-center">
           <Transition.Child
             enter="ease-out duration-300"
